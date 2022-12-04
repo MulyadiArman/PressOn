@@ -5,6 +5,13 @@ import com.example.myapplication.model.User
 import com.orhanobut.hawk.Hawk
 
 class HawkStorage {
+    fun isLogin(): Boolean {
+        if (Hawk.contains(USER_KEY)){
+            return true
+        }
+        return false
+    }
+
     companion object{
         private const val USER_KEY = "user_key"
         private const val TOKEN_KEY = "token_key"

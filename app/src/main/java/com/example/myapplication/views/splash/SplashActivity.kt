@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.myapplication.views.splash.SplashActivity
 import com.example.myapplication.R
-
+import com.example.myapplication.hawkstorage.HawkStorage
 import com.example.myapplication.views.login.LoginActivity
 import com.example.myapplication.views.main.MainActivity
 import org.jetbrains.anko.startActivity
@@ -17,12 +16,24 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        supportActionBar?.hide()
+        afterDelayGoToLogin()
+    }
 
-        Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
-            startActivity(intent)
-        },3000)
+    private fun afterDelayGoToLogin() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            checkIsLogin()
+        },1200)
+    }
+
+    private fun checkIsLogin() {
+        val isLogin = HawkStorage.instance(this).isLogin()
+        if (isLogin){
+            startActivity<MainActivity>()
+            finishAffinity()
+        }else{
+            startActivity<LoginActivity>()
+            finishAffinity()
+        }
     }
 }
 

@@ -6,9 +6,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import com.example.myapplication.R
 
-class MyDialog {
+class MyDialog(showProgressDialog: Unit)
 
-    private var dialogBuilder: AlertDialog? = null
+private var dialogBuilder: AlertDialog? = null
 
     fun dynamicDialog(context: Context?, title: String, message: String){
         dialogBuilder = AlertDialog.Builder(context)
@@ -34,4 +34,3 @@ class MyDialog {
             dialogBuilder?.dismiss()
         }
     }
-}

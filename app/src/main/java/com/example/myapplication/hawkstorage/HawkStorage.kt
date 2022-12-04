@@ -12,6 +12,30 @@ class HawkStorage {
         return false
     }
 
+    fun setUser(user: User) {
+        Hawk.put(USER_KEY, user)
+    }
+
+    fun getUser(): User{
+        return Hawk.get(USER_KEY)
+    }
+
+    fun setToken(token: String) {
+        Hawk.put(TOKEN_KEY, token)
+    }
+
+    fun getToken(): String{
+        val rawToken = Hawk.get<String>(TOKEN_KEY)
+        val token = rawToken.split("|")
+        return token[1]
+    }
+
+    fun deleteAll(){
+        Hawk.deleteAll()
+    }
+
+
+
     companion object{
         private const val USER_KEY = "user_key"
         private const val TOKEN_KEY = "token_key"

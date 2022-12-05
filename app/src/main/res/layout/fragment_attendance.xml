@@ -11,7 +11,8 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
+        tools:context="com.example.mapwithmarker.MapsMarkerActivity"
+        tools:layout="@layout/fragment_attendance" />
 
     <include
         android:layout_width="224dp"
@@ -30,7 +31,8 @@
         android:tint="@color/colorPrimary"
         android:src="@drawable/ic_baseline_location_searching_24"
         android:layout_margin="16dp"
-        android:translationY="-40dp"/>
+        android:translationY="-40dp"
+        android:contentDescription="TODO" />
 
     <include
         android:id="@+id/layout_bottom_sheet"

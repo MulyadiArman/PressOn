@@ -28,4 +28,9 @@
     <string name="success">Success</string>
     <string name="location">location</string>
     <string name="todo">TODO</string>
+    <string name="are_you_sure" />
+    <string name="yes" />
+    <string name="no" />
+    <string name="alert" />
+    <string name="something_wrong" />
 </resources>

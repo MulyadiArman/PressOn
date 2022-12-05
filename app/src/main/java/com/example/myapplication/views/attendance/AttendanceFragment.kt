@@ -24,10 +24,11 @@ class AttendanceFragment : Fragment(), OnMapReadyCallback {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View?{
-        binding = FragmentAttendanceBinding.inflate( inflater, container, false)
-        return binding?.root
-    }
+    ): View? = inflater.inflate(R.layout.fragment_attendance, container, false)
+    //{
+////        binding = FragmentAttendanceBinding.inflate( inflater, container, false)
+////        return binding?.root
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -47,7 +48,7 @@ class AttendanceFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
         //Coordinate Bisa di ganti sesuai tempat teman-teman masing-masing
-        val sydney = LatLng(-1.1584637, 116.8792549)
+        val sydney = LatLng(-1.154359, 116.889694)
         map?.addMarker(
             MarkerOptions()
                 .position(sydney)

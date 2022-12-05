@@ -19,6 +19,10 @@ interface LiveAttendanceApiServices {
     @Headers("Accept: application/json", "Content-Type: application/json")
     @POST("auth/password/forgot")
     fun forgotPasswordRequest(@Body body: String): Call<ForgotPasswordResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST("auth/logout")
+    fun logoutRequest(@Header("Authorization") token: String): Call<LogoutResponse>
 }
 
 
